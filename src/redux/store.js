@@ -4,8 +4,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import {
   weatherForecastReducer,
-  userSelectionReducer
 } from './reducers/weatherReducer';
+
+import {
+  userSelectionReducer
+} from './reducers/userSelectionReducer';
 
 const reducer = combineReducers({
   weatherForecast: weatherForecastReducer,
