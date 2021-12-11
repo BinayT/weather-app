@@ -1,18 +1,14 @@
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import {getWeatherData} from './utils/apiUtils';
+import {getWeather} from './redux/actions/weatherActions'
 
 function App() {
-
-  const [weatherData, setWeatherData] = useState([]);
+  const dispatch = useDispatch();
+  const weatherData = useSelector(state=>state.weatherForecast)
 
   useEffect(()=>{
-    if (weatherData.length !== 0) return; 
-    const getWeatherDataa = async () => {
-      const data = await getWeatherData('madrid')
-      setWeatherData(data)
-    }
-    getWeatherDataa()
+    Object.keys(weatherData).length === 0 && dispatch(getWeather())
   })
 
   return (
