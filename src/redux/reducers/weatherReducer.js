@@ -9,7 +9,7 @@ export const weatherForecastReducer = (state={}, action) => {
         case WEATHER_FORECASE_REQUEST:
             return {loading: true}
         case WEATHER_FORECASE_SUCCESS:
-            return {loading: false, weatherForecast: action.payload}
+            return {loading: false, result: action.payload}
         case WEATHER_FORECASE_FAIL:
             return {loading: false, error: action.payload}
         default:
