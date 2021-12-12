@@ -1,17 +1,21 @@
-const Card = () => {
+import { Card } from "react-bootstrap"
+
+import './style.css'
+
+const Cardd = ({data}) => {
+    const {icon, main, description} = data.weather[0];
+
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+        <Card style={{ width: '18rem', margin: '30px'}}>
+            <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${icon}@2x.png`} />
+            <Card.Body className='cardbody'>
+                <Card.Title>{main}</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                    {description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
             </Card.Body>
         </Card>
     )
 }
 
-export default Card
+export default Cardd

@@ -1,0 +1,10 @@
+.userSelectionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userSelectionTitle{
+    font-size:larger;
+    font-weight:bold;
+}

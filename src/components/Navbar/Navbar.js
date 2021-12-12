@@ -22,7 +22,7 @@ const NavbarComponent = () => {
             }
             dispatch(setUserSelection(dataToBeSent))
         }
-    },[city,timeframe])
+    },[city,timeframe,dispatch])
 
     return (
         <Navbar bg="light" expand="lg">
