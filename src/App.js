@@ -7,15 +7,17 @@ import Navbar from './components/Navbar/Navbar'
 
 function App() {
   const dispatch = useDispatch();
-  const weatherData = useSelector(state=>state.weatherForecast)
+  const userSelection = useSelector(state=>state.userSelection)
 
   useEffect(()=>{
-    Object.keys(weatherData).length === 0 && dispatch(getWeather())
-  })
+    userSelection.city !== null && dispatch(getWeather(userSelection.city))
+    console.log('ok')
+  },[userSelection])
 
   return (
     <Container>
       <Navbar />
+      {userSelection.city}
     </Container>
   );
 }
