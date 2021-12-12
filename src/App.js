@@ -1,7 +1,9 @@
+import {Container} from 'react-bootstrap'
 import {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {getWeather} from './redux/actions/weatherActions'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   const dispatch = useDispatch();
@@ -12,9 +14,9 @@ function App() {
   })
 
   return (
-    <div className="App">
-      ok
-    </div>
+    <Container>
+      <Navbar />
+    </Container>
   );
 }
 

@@ -1,0 +1,1 @@
+export const majorCities = ['madrid', 'paris', 'rome', 'frankfurt', 'kathmandu', 'amsterdam']
